@@ -66,3 +66,13 @@ alunos.split("\n").forEach(function(row){
 });
 table += "</table>"
 console.log(table);
+
+var table = "<table><thead>";
+var rows = alunos.split("\n");
+var firstRow = rows.shift();
+table += "<tr><th>"+firstRow.split(", ").join("</th><th>")+"</th></tr></thead><tbody>";
+rows.forEach(function(row){
+  table += "<tr><td>"+row.split(", ").join("</td><td>")+"</td></tr>";
+});
+table += "</tbody></table>"
+console.log(table);
