@@ -9,6 +9,8 @@ if (false) { // undefined, false, null, 0, 0.0
   console.log('Ohhhh false!!!');
 }
 
+console.log(false ? 'Ohhhh true!!!' : 'Ohhhh false!!!');
+
 var operand1 = 1;
 var operand2 = 1;
 var operator = '+';
