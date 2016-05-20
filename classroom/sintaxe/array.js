@@ -52,3 +52,17 @@ for(let value of array) {
 console.log("lorem ipsum dolor".split(" "));
 console.log("lorem ipsum dolor".split(""));
 console.log([ 'lorem', 'ipsum', 'dolor' ].join(" "));
+
+// geração de tabela
+var alunos = "nome, email\nfulano, fulano@email\nsicrano, sicrano@email";
+console.log(alunos.split("\n"));
+var table = "<table>";
+alunos.split("\n").forEach(function(row){
+  table += "<tr>"
+  row.split(", ").forEach(function(col){
+    table += "<td>"+col+"</td>"
+  });
+  table += "</tr>";
+});
+table += "</table>"
+console.log(table);

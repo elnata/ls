@@ -98,6 +98,16 @@ console.log(somaRestParamReduce(1, 1, 2, 5));
 console.log(somaRestParamReduce(1, 1));
 console.log(somaRestParamReduce(1));
 
+function productRestParamReduce(...values) {
+  return values.reduce(function(product, value){
+    return product * value;
+  }, 1);
+}
+console.log(productRestParamReduce(1, 1, 3));
+console.log(productRestParamReduce(1, 1, 2, 5));
+
+
+
 // Rest Param Array.reduce com Arrow Func
 function somaRestParamReduceArrowFunc(...values) {
   var sum = values.reduce((sum, value) => sum + value , 0);
@@ -107,6 +117,12 @@ console.log(somaRestParamReduceArrowFunc(1, 1, 3));
 console.log(somaRestParamReduceArrowFunc(1, 1, 2, 5));
 console.log(somaRestParamReduceArrowFunc(1, 1));
 console.log(somaRestParamReduceArrowFunc(1));
+
+function productRestParamReduce(...values) {
+  return values.reduce(((product, value) => product * value), 1);
+}
+console.log(productRestParamReduce(1, 1, 3));
+console.log(productRestParamReduce(1, 1, 2, 5));
 
 // Array.select
 // Duplicar Array: classicamente
