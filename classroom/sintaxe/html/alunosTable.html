@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    tr:nth-child(2n) {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <table id="alunos"></table>
+  <script>
+    var alunos = "nome, email\nsicrano, Sicrano@email\nfulano, fulano@email";
+    var table = "<table><thead>";
+    var rows = alunos.split("\n");
+    var firstRow = rows.shift();
+    table += "<tr><th>"+firstRow.split(", ").join("</th><th>")+"</th></tr></thead><tbody>";
+    rows = rows.map((row) => row.toLowerCase());
+    rows.sort().forEach(function(row){
+      table += "<tr><td>"+row.split(", ").join("</td><td>")+"</td></tr>";
+    });
+    table += "</tbody></table>"
+    document.querySelector("table#alunos").innerHTML = table;
+    console.log(document.querySelector("table#alunos").innerHTML);
+  </script>
+</body>
+</html>

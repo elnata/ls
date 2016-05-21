@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="input1">
+  <button onclick="copia()">-></button>
+  <input type="text" id="input2">
+  <script>
+    function copia(){
+      var value = document.querySelector("#input1").value
+      document.querySelector("#input2").value = value;
+    }
+  </script>
+</body>
+</html>
