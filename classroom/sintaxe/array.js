@@ -67,11 +67,25 @@ alunos.split("\n").forEach(function(row){
 table += "</table>"
 console.log(table);
 
+var alunos = "nome, email\nfulano, fulano@email\nsicrano, sicrano@email";
 var table = "<table><thead>";
 var rows = alunos.split("\n");
 var firstRow = rows.shift();
 table += "<tr><th>"+firstRow.split(", ").join("</th><th>")+"</th></tr></thead><tbody>";
 rows.forEach(function(row){
+  table += "<tr><td>"+row.split(", ").join("</td><td>")+"</td></tr>";
+});
+table += "</tbody></table>"
+console.log(table);
+
+var alunos = "nome, email\nsicrano, Sicrano@email\nfulano, fulano@email";
+var table = "<table><thead>";
+var rows = alunos.split("\n");
+var firstRow = rows.shift();
+table += "<tr><th>"+firstRow.split(", ").join("</th><th>")+"</th></tr></thead><tbody>";
+// rows.forEach((row, key) => rows[key] = row.toLowerCase());
+rows = rows.map((row) => row.toLowerCase());
+rows.sort().forEach(function(row){
   table += "<tr><td>"+row.split(", ").join("</td><td>")+"</td></tr>";
 });
 table += "</tbody></table>"
