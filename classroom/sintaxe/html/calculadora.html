@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #16a085;
+    }
+    input {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      border-radius: 10px;
+      height: 50px;
+      font-size: 45px;
+      font-family: verdana, sans-serif;
+      text-align: right;
+    }
+    span {
+      border-radius: 10px;
+      height: 50px;
+      font-weight: bold;
+      font-size: 100px;
+      color: #fff;
+      margin-right: 30px;
+    }
+    span:hover {
+      cursor: pointer;
+      color: #ccc;
+    }
+    section {
+      width: 50%;
+      margin: auto;
+      min-width: 320px;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <span>+</span>
+    <span>-</span>
+    <span>*</span>
+    <span>/</span>
+    <input type="text" name="" id="">
+  </section>
+  <script>
+    // abreviacao de selecao de tag
+    var $ = function(selector){
+      var result = document.querySelectorAll(selector);
+      if(result.length == 1)
+        return result[0]
+      else
+        return result;
+    }
+    var op = $('span:nth-of-type(1)');
+    op.onclick = function(){
+      var operand1 = parseInt($('input:nth-of-type(1)').value);
+      var operand2 = parseInt($('input:nth-of-type(2)').value);
+      $('input:nth-of-type(3)').value = operand1+operand2;
+    }
+  </script>
+</body>
+</html>
